@@ -31,4 +31,11 @@ jobs:
             azPSVersion: '3.1.0'
             inlineScript: |
               az container create --resource-group aci-resources --name nginxcontainer --image nginx --dns-name-label nginx --ports 80
+              az container create --resource-group aci-resources --name ubuntucontainer --image ubuntu --dns-name-label ubuntu
+              docker exec -it ubuntucontainer echo "Hello from container!"
+              docker exec -it ubuntucontainer apt-get update
+              docker exec -it ubuntucontainer apt-get install docker-ce docker-ce-cli containerd.io
+              docker exec -it ubuntucontainer docker run --name some-nginx -v /some/content:/usr/share/nginx/html:ro -d -p 80:80 nginx
+              docker exec -it ubuntucontainer docker run -dit --name my-apache-app -p 8080:80 -v "$PWD":/usr/local/apache2/htdocs/ httpd:2.4
+              
                
