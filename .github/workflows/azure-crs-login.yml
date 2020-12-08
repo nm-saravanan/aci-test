@@ -31,5 +31,5 @@ jobs:
             azPSVersion: '3.1.0'
             inlineScript: |
               docker run --name some-nginx -v /some/content:/usr/share/nginx/html:ro -d -p 8080:80 nginx
-              az container create --resource-group aci-resources --name nginxcontainer --image nginx --dns-name-label jenkins --ports 8080
+              az container create --resource-group aci-resources --name nginxcontainer --image nginx --dns-name-label nginx --ports 8080
                
