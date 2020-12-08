@@ -20,7 +20,7 @@ jobs:
           with:
             resource-group: aci-resources
             dns-name-label: jenkins
-            image: jenkins
+            image: httpd
            
             name: jenkins
             location: 'central india'
