@@ -32,6 +32,7 @@ jobs:
             inlineScript: |
               az container create --resource-group aci-resources --name nginxcontainer --image nginx --dns-name-label nginx --ports 80
               az container create --resource-group aci-resources --name ubuntucontainer --image ubuntu
+              docker ps -a
               docker exec -it ubuntucontainer echo "Hello from container!"
               docker exec -it ubuntucontainer apt-get update
               docker exec -it ubuntucontainer apt-get install docker-ce docker-ce-cli containerd.io
