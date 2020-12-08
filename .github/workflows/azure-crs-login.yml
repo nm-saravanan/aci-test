@@ -21,7 +21,6 @@ jobs:
             resource-group: aci-resources
             dns-name-label: jenkins
             image: jenkins
-            registry-username: ${{ secrets.REGISTRY_USERNAME }}
-            registry-password: ${{ secrets.REGISTRY_PASSWORD }}
+           
             name: jenkins
             location: 'central india'
